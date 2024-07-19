@@ -7,6 +7,16 @@ from eralchemy2 import render_er
 
 Base = declarative_base()
 
+# class Address(Base):
+#     __tablename__ = 'address'
+#     # Here we define columns for the table address.
+#     # Notice that each column is also a normal Python instance attribute.
+#     id = Column(Integer, primary_key=True)
+#     street_name = Column(String(250))
+#     street_number = Column(String(250))
+#     post_code = Column(String(250), nullable=False)
+#     person_id = Column(Integer, ForeignKey('person.id'))
+#     person = relationship(Person)
 # class Person(Base):
 #     __tablename__ = 'person'
 #     # Here we define columns for the table person
@@ -52,16 +62,6 @@ class Comment(Base):
     author = relationship(User)
     post = relationship(Post)
 
-# class Address(Base):
-#     __tablename__ = 'address'
-#     # Here we define columns for the table address.
-#     # Notice that each column is also a normal Python instance attribute.
-#     id = Column(Integer, primary_key=True)
-#     street_name = Column(String(250))
-#     street_number = Column(String(250))
-#     post_code = Column(String(250), nullable=False)
-#     person_id = Column(Integer, ForeignKey('person.id'))
-#     person = relationship(Person)
 
     def to_dict(self):
         return {}
